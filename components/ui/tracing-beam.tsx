@@ -42,7 +42,7 @@ export const TracingBeam = ({
   const yVelocityFactor = useTransform(yVelocity, [-5000, 0, 5000], [-1, 0, 1]);
 
   useEffect(() => {
-    return springY.onChange(latest => {
+    return springY.on("change", latest => {
       latestY.current = latest;
     });
   }, [springY]);

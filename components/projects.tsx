@@ -117,7 +117,7 @@ export default function Projects() {
             >
               <Card className="overflow-hidden h-full flex flex-col group">
                 <div className="relative overflow-hidden">
-                  <div className="aspect-video overflow-hidden">
+                  <div className="aspect-video relative overflow-hidden">
                     <Image
                       src={project.image || "/placeholder.svg"}
                       alt={project.title}

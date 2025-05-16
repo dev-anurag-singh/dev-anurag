@@ -5,6 +5,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { FileText } from "lucide-react";
 import { TracingBeam } from "@/components/ui/tracing-beam";
+import Image from "next/image";
 
 export default function About() {
   return (
@@ -36,9 +37,10 @@ export default function About() {
               <Card className="border-none shadow-lg overflow-hidden">
                 <CardContent className="p-0">
                   <div className="aspect-square bg-muted relative overflow-hidden">
-                    <img
-                      src="/placeholder.svg?height=600&width=600"
+                    <Image
+                      src="/profile.png"
                       alt="Profile"
+                      fill
                       className="object-cover w-full h-full"
                     />
                   </div>
