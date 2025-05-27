@@ -21,7 +21,7 @@ export const TracingBeam = ({
   const ref = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     target: ref,
-    offset: ["start start", "end end"],
+    offset: ["start start", "end start"],
   });
 
   const contentRef = useRef<HTMLDivElement>(null);
@@ -33,65 +33,96 @@ export const TracingBeam = ({
     }
   }, []);
 
-  const y1 = useTransform(scrollYProgress, [0, 0.9], [50, svgHeight - 50]);
-  const y2 = useTransform(scrollYProgress, [0, 1], [50, svgHeight - 50]);
-
-  const latestY = useRef(0);
-  const springY = useSpring(y2, { damping: 50, stiffness: 400 });
-  const yVelocity = useVelocity(springY);
-  const yVelocityFactor = useTransform(yVelocity, [-5000, 0, 5000], [-1, 0, 1]);
-
-  useEffect(() => {
-    return springY.on("change", latest => {
-      latestY.current = latest;
-    });
-  }, [springY]);
+  const y1 = useSpring(
+    useTransform(scrollYProgress, [0, 0.8], [50, svgHeight]),
+    {
+      stiffness: 500,
+      damping: 90,
+    }
+  );
+  const y2 = useSpring(
+    useTransform(scrollYProgress, [0, 1], [50, svgHeight - 200]),
+    {
+      stiffness: 500,
+      damping: 90,
+    }
+  );
 
   return (
     <motion.div
       ref={ref}
-      className={cn("relative w-full max-w-4xl mx-auto", className)}
+      className={cn("relative w-full max-w-4xl mx-auto ", className)}
     >
-      <div className="absolute left-0 top-3">
+      <div className="absolute top-0 -left-4">
         <motion.div
           transition={{
             duration: 0.2,
+            delay: 0.5,
           }}
-          className="relative h-full w-[4px] ml-[8px]"
+          animate={{
+            boxShadow:
+              scrollYProgress.get() > 0
+                ? "none"
+                : "rgba(0, 0, 0, 0.24) 0px 3px 8px",
+          }}
+          className="border-netural-200 ml-[11px] flex h-4 w-4 items-center justify-center rounded-full border shadow-sm"
         >
-          <svg
-            viewBox={`0 0 20 ${svgHeight}`}
-            width="20"
-            height={svgHeight}
-            className="block"
-            aria-hidden="true"
-          >
-            <motion.path
-              d={`M 1 0 V ${svgHeight} M 1 ${y1} L 1 ${y2}`}
-              fill="none"
-              stroke="hsl(var(--primary))"
-              strokeOpacity="0.2"
-              strokeWidth="2"
-              className="motion-safe:transition-all motion-safe:duration-200"
-            />
-            <motion.path
-              d={`M 1 ${y1} L 1 ${y2}`}
-              fill="none"
-              stroke="hsl(var(--primary))"
-              strokeWidth="2"
-              className="motion-safe:transition-all motion-safe:duration-200"
-            />
-            <motion.circle
-              cx="1"
-              cy={y2}
-              r="4"
-              fill="hsl(var(--primary))"
-              className="motion-safe:transition-all motion-safe:duration-200"
-            />
-          </svg>
+          <motion.div
+            transition={{
+              duration: 0.2,
+              delay: 0.5,
+            }}
+            animate={{
+              backgroundColor: scrollYProgress.get() > 0 ? "white" : "#10b981",
+              borderColor: scrollYProgress.get() > 0 ? "white" : "#059669",
+            }}
+            className="h-2 w-2 rounded-full border border-neutral-300 bg-white"
+          />
         </motion.div>
+        <svg
+          viewBox={`0 0 20 ${svgHeight}`}
+          width="20"
+          height={svgHeight} // Set the SVG height
+          className="block"
+          aria-hidden="true"
+        >
+          <motion.path
+            d={`M 1 0V -36 l 18 24 V ${svgHeight * 0.8} l -18 24V ${svgHeight}`}
+            fill="none"
+            stroke="#9091A0"
+            strokeOpacity="0.16"
+            transition={{
+              duration: 10,
+            }}
+          ></motion.path>
+          <motion.path
+            d={`M 1 0V -36 l 18 24 V ${svgHeight * 0.8} l -18 24V ${svgHeight}`}
+            fill="none"
+            stroke="url(#gradient)"
+            strokeWidth="1.25"
+            className="motion-reduce:hidden"
+            transition={{
+              duration: 10,
+            }}
+          ></motion.path>
+          <defs>
+            <motion.linearGradient
+              id="gradient"
+              gradientUnits="userSpaceOnUse"
+              x1="0"
+              x2="0"
+              y1={y1} // set y1 for gradient
+              y2={y2} // set y2 for gradient
+            >
+              <stop stopColor="#18CCFC" stopOpacity="0"></stop>
+              <stop stopColor="#18CCFC"></stop>
+              <stop offset="0.325" stopColor="#6344F5"></stop>
+              <stop offset="1" stopColor="#AE48FF" stopOpacity="0"></stop>
+            </motion.linearGradient>
+          </defs>
+        </svg>
       </div>
-      <div ref={contentRef} className="ml-8 pt-10 pb-10">
+      <div ref={contentRef} className="ml-6 pt-10 pb-10">
         {children}
       </div>
     </motion.div>

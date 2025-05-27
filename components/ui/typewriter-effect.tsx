@@ -50,7 +50,7 @@ export const TypewriterEffect = ({
                   }}
                   key={`char-${index}`}
                   className={cn(
-                    "text-2xl md:text-4xl font-bold",
+                    "text-base sm:text-lg md:text-xl lg:text-2xl",
                     word.className
                   )}
                 >
@@ -83,7 +83,10 @@ export const TypewriterEffect = ({
   };
 
   return (
-    <div ref={scope} className="text-center py-4">
+    <div
+      ref={scope}
+      className="text-center h-12 flex items-center justify-center"
+    >
       {renderWords()}
     </div>
   );

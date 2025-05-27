@@ -9,6 +9,7 @@ import {
   GitBranch,
   Smartphone,
   Zap,
+  Server,
 } from "lucide-react";
 import { HoverEffect } from "@/components/ui/card-hover-effect";
 
@@ -19,6 +20,12 @@ export default function Skills() {
       title: "Frontend Development",
       description:
         "Building responsive and interactive UIs with React, Next.js, TypeScript & Tailwind CSS",
+    },
+    {
+      icon: <Server className="h-10 w-10 text-primary" />,
+      title: "Api Development",
+      description:
+        "Building performant APIs with Next.js, Prisma/Drizzle, Trpc, and PostgreSQL.",
     },
     {
       icon: <Database className="h-10 w-10 text-primary" />,
@@ -84,6 +91,8 @@ export default function Skills() {
             "TypeScript",
             "JavaScript",
             "Tailwind CSS",
+            "Clerk",
+            "Prisma",
             "HTML/CSS",
             "Redux",
             "React Query",

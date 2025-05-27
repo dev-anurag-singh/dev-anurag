@@ -27,7 +27,7 @@ export default function About() {
         </motion.div>
 
         <TracingBeam>
-          <div className="grid md:grid-cols-2 gap-10 items-center overflow-x-hidden">
+          <div className="grid md:grid-cols-2 gap-10  items-center overflow-x-hidden">
             <motion.div
               initial={{ opacity: 0, x: -50 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -69,14 +69,14 @@ export default function About() {
                 technical expertise with creative problem-solving to build web
                 applications that are both functional and visually appealing.
               </p>
-              <div className="grid grid-cols-2 gap-4 pt-4">
+              <div className="grid grid-cols-2 gap-4 md:gap-x-0  pt-4">
                 <div>
                   <h4 className="font-medium mb-2">Name:</h4>
                   <p className="text-muted-foreground">Anurag Kumar</p>
                 </div>
                 <div>
                   <h4 className="font-medium mb-2">Email:</h4>
-                  <p className="text-muted-foreground break-words">
+                  <p className="text-muted-foreground break-all">
                     contact@anuragkumar.dev
                   </p>
                 </div>

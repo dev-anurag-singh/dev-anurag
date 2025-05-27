@@ -54,9 +54,10 @@ const projects = [
       "Personal finance tracker built with a focus on simplicity and clarity. Helps users monitor income, expenses, and overall financial health through an intuitive, responsive dashboard with actionable spending insights.",
     image: "/finify-preview.png",
     tags: [
-      "React",
       "Next.js",
       "TypeScript",
+      "Drizzle",
+      "PostgreSQL",
       "TailwindCSS",
       "React Query",
       "Recharts",
@@ -106,7 +107,7 @@ export default function Projects() {
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2 gap-8 lg:gap-20">
           {projects.map((project, index) => (
             <motion.div
               key={project.id}
