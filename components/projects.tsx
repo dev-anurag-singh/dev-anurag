@@ -91,7 +91,7 @@ const testimonials = [
 export default function Projects() {
   return (
     <section id="projects" className="py-20 bg-muted/30">
-      <div className="container">
+      <div className="max-w-6xl px-8 mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -107,7 +107,7 @@ export default function Projects() {
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-8 lg:gap-20">
+        <div className="grid md:grid-cols-2 gap-8 lg:gap-10">
           {projects.map((project, index) => (
             <motion.div
               key={project.id}
