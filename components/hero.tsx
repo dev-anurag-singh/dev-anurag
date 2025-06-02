@@ -28,7 +28,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="mb-8 xl:mb-12"
+          className="mb-8 2xl:mb-12"
         >
           <h1 className="text-[clamp(2.4rem,8.5vw_+_0.5rem,9rem)] leading-none font-bold mb-4">
             Hi, I'm <span className="text-primary">Anurag.</span>
@@ -38,7 +38,7 @@ export default function Hero() {
           </h2>
         </motion.div>
 
-        <div className="mb-8 xl:mb-12">
+        <div className="mb-8 2xl:mb-12">
           <TypewriterEffect words={words} />
         </div>
 
