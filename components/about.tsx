@@ -9,7 +9,7 @@ import Image from "next/image";
 
 export default function About() {
   return (
-    <section id="about" className="py-20 bg-muted/30">
+    <section id="about" className="relative z-10 py-20 bg-muted/30">
       <div className="container">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -21,7 +21,7 @@ export default function About() {
           <h2 className="text-3xl font-bold mb-4">About Me</h2>
           <div className="w-20 h-1 bg-primary mx-auto mb-6"></div>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            I'm a front-end developer who loves crafting clean, responsive, and
+            I'm a Full-stack developer who loves crafting clean, responsive, and
             accessible interfaces that deliver smooth user experiences.
           </p>
         </motion.div>
@@ -56,7 +56,7 @@ export default function About() {
               className="space-y-6"
             >
               <h3 className="text-2xl font-bold">
-                Front-end Developer & UI/UX Enthusiast
+                Full-stack React & Next.js Developer
               </h3>
               <p className="text-muted-foreground">
                 With over 2 years of experience in web development, I specialize
@@ -75,16 +75,10 @@ export default function About() {
                   <p className="text-muted-foreground">Anurag Kumar</p>
                 </div>
                 <div>
-                  <h4 className="font-medium mb-2">Email:</h4>
-                  <p className="text-muted-foreground break-all">
-                    contact@anuragkumar.dev
-                  </p>
-                </div>
-                <div>
                   <h4 className="font-medium mb-2">Location:</h4>
                   <p className="text-muted-foreground">Delhi, India</p>
                 </div>
-                <div>
+                <div className="col-span-2">
                   <h4 className="font-medium mb-2">Availability:</h4>
                   <p className="text-muted-foreground">Freelance / Full-time</p>
                 </div>
