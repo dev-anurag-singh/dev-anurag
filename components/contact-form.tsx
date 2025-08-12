@@ -123,7 +123,7 @@ export function ContactForm() {
             </FormItem>
           )}
         />
-        <Button disabled={isSubmitting} type="submit">
+        <Button className="w-full" disabled={isSubmitting} type="submit">
           Submit
         </Button>
       </form>
