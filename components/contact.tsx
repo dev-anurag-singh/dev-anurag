@@ -16,7 +16,7 @@ import { ContactForm } from "./contact-form";
 
 export default function Contact() {
   return (
-    <section id="contact" className="py-20">
+    <section id="contact" className="py-20 relative z-10">
       <LampContainer>
         <div className="container">
           <motion.div
@@ -34,8 +34,8 @@ export default function Contact() {
             </p>
           </motion.div>
 
-          <div className="grid md:grid-cols-2 gap-10">
-            <motion.div
+          <div className="flex justify-center gap-10">
+            {/* <motion.div
               initial={{ opacity: 0, x: -50 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
@@ -106,16 +106,17 @@ export default function Contact() {
                   </div>
                 </CardContent>
               </Card>
-            </motion.div>
+            </motion.div> */}
 
             <motion.div
               initial={{ opacity: 0, x: 50 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.2 }}
+              className="w-full max-w-2xl"
             >
               <Card>
-                <CardContent className="p-6">
+                <CardContent className="p-6 ">
                   <h3 className="text-xl font-bold mb-6">Send Me a Message</h3>
 
                   <ContactForm />
