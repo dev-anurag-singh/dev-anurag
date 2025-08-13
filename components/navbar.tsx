@@ -17,7 +17,7 @@ const navItems = [
   { name: "Contact", href: "#contact" },
 ];
 
-export default function Navbar() {
+export const Navbar = () => {
   const [isScrolled, setIsScrolled] = React.useState(false);
   const pathname = usePathname();
 
@@ -47,7 +47,7 @@ export default function Navbar() {
           : "bg-transparent"
       )}
     >
-      <div className="container flex h-16 items-center justify-between">
+      <div className="pl-8 pr-5 md:px-8 md:container flex h-16 items-center justify-between">
         <Link href="#home" className="flex items-center space-x-2">
           <motion.div
             initial={{ opacity: 0, scale: 0.8 }}
@@ -108,4 +108,4 @@ export default function Navbar() {
       </div>
     </motion.header>
   );
-}
+};
