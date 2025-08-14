@@ -70,6 +70,12 @@ const projects = [
 const testimonials = [
   {
     quote:
+      "Anurag did an excellent job on the frontend project. He delivered on time, communicated clearly, and showed strong technical skills. It was a great experience working with him, and I’d be happy to collaborate again in the future. Highly recommended!",
+    name: "David Melody",
+    title: "Owner, Lawnote",
+  },
+  {
+    quote:
       "Working with Anurag was a seamless experience. He brought not just technical expertise, but also a thoughtful approach to problem-solving and attention to detail. The final output exceeded expectations in both functionality and design.",
     name: "John Cole",
     title: "Owner, Ledgerly",
@@ -90,7 +96,7 @@ const testimonials = [
 
 export default function Projects() {
   return (
-    <section id="projects" className="py-20 bg-muted/30">
+    <section id="projects" className="py-20 bg-muted/30 relative z-10">
       <div className="max-w-6xl px-8 mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -182,7 +188,7 @@ export default function Projects() {
         <InfiniteMovingCards
           items={testimonials}
           direction="right"
-          speed="fast"
+          speed="slow"
         />
       </div>
     </section>
