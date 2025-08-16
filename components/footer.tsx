@@ -13,7 +13,7 @@ export default function Footer() {
   };
 
   return (
-    <footer className="bg-muted py-12">
+    <footer className="bg-muted py-12 relative z-10">
       <div className="container">
         <div className="flex flex-col md:flex-row justify-between items-center">
           <motion.div
