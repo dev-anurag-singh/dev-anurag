@@ -189,6 +189,7 @@ export default function Projects() {
           items={testimonials}
           direction="right"
           speed="slow"
+          pauseOnHover={false}
         />
       </div>
     </section>

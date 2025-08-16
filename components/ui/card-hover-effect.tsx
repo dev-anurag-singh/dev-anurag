@@ -1,26 +1,31 @@
-"use client"
+"use client";
 
-import type React from "react"
+import type React from "react";
 
-import { cn } from "@/lib/utils"
-import { AnimatePresence, motion } from "framer-motion"
-import { useState } from "react"
+import { cn } from "@/lib/utils";
+import { AnimatePresence, motion } from "framer-motion";
+import { useState } from "react";
 
 export const HoverEffect = ({
   items,
   className,
 }: {
   items: {
-    title: string
-    description: string
-    icon?: React.ReactNode
-  }[]
-  className?: string
+    title: string;
+    description: string;
+    icon?: React.ReactNode;
+  }[];
+  className?: string;
 }) => {
-  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null)
+  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
   return (
-    <div className={cn("grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 py-10", className)}>
+    <div
+      className={cn(
+        "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 py-10",
+        className
+      )}
+    >
       {items.map((item, idx) => (
         <div
           key={item.title}
@@ -55,44 +60,54 @@ export const HoverEffect = ({
         </div>
       ))}
     </div>
-  )
-}
+  );
+};
 
 export const Card = ({
   className,
   children,
 }: {
-  className?: string
-  children: React.ReactNode
+  className?: string;
+  children: React.ReactNode;
 }) => {
   return (
     <div
       className={cn(
         "rounded-lg border border-primary/10 bg-background shadow-sm group-hover:border-primary/30 transition-colors",
-        className,
+        className
       )}
     >
       {children}
     </div>
-  )
-}
+  );
+};
 
 export const CardTitle = ({
   className,
   children,
 }: {
-  className?: string
-  children: React.ReactNode
+  className?: string;
+  children: React.ReactNode;
 }) => {
-  return <h4 className={cn("text-lg font-bold tracking-wide", className)}>{children}</h4>
-}
+  return (
+    <h4 className={cn("text-lg font-bold tracking-wide", className)}>
+      {children}
+    </h4>
+  );
+};
 
 export const CardDescription = ({
   className,
   children,
 }: {
-  className?: string
-  children: React.ReactNode
+  className?: string;
+  children: React.ReactNode;
 }) => {
-  return <p className={cn("text-sm leading-relaxed text-muted-foreground", className)}>{children}</p>
-}
+  return (
+    <p
+      className={cn("text-sm leading-relaxed text-muted-foreground", className)}
+    >
+      {children}
+    </p>
+  );
+};
