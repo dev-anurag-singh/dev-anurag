@@ -9,7 +9,7 @@ export default function Hero() {
       id="home"
       className="relative min-h-[100dvh] md:min-h-screen flex flex-col items-center justify-center overflow-hidden"
     >
-      <div className="container flex flex-col py-28 px-4 items-center justify-center text-center z-10">
+      <div className="container flex flex-col py-16 md:py-28 px-4 items-center justify-center text-center z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -55,37 +55,18 @@ export default function Hero() {
             hover:bg-[position:100%_50%]
             hover:scale-105 hover:-translate-y-1 hover:shadow-md animate-gradient hover:shadow-[#7A00C055]"
           >
-            <a href="#projects">View Projects</a>
+            <a href="/work">View My Work</a>
           </Button>
           <Button
             asChild
             variant="outline"
             className="font-semibold w-48 h-14 rounded-full text-lg transition-all duration-200 hover:scale-110 hover:shadow-lg hover:-translate-y-1"
           >
-            <a href="#contact">Hire Me</a>
+            <a href="/contact">Hire Me</a>
           </Button>
         </motion.div>
       </div>
 
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1, duration: 2 }}
-        className="absolute bottom-6 md:bottom-10 left-1/2 transform -translate-x-1/2"
-      >
-        <div className="flex flex-col items-center">
-          <span className="text-sm text-muted-foreground mb-2">
-            Scroll Down
-          </span>
-          <div className="w-6 h-10 border-2 border-primary rounded-full flex justify-center p-1">
-            <motion.div
-              animate={{ y: [0, 12, 0] }}
-              transition={{ repeat: Number.POSITIVE_INFINITY, duration: 1.5 }}
-              className="w-1 h-2 bg-primary rounded-full"
-            />
-          </div>
-        </div>
-      </motion.div>
     </section>
   );
 }

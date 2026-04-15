@@ -10,11 +10,10 @@ import { Menu } from "lucide-react";
 import { usePathname } from "next/navigation";
 
 const navItems = [
-  { name: "Home", href: "#home" },
-  { name: "About", href: "#about" },
-  { name: "Skills", href: "#skills" },
-  { name: "Projects", href: "#projects" },
-  { name: "Contact", href: "#contact" },
+  { name: "Home", href: "/" },
+  { name: "About", href: "/about" },
+  { name: "Work", href: "/work" },
+  { name: "Contact", href: "/contact" },
 ];
 
 export const Navbar = () => {
@@ -48,7 +47,7 @@ export const Navbar = () => {
       )}
     >
       <div className="pl-8 pr-5 md:px-8 md:container flex h-16 items-center justify-between">
-        <Link href="#home" className="flex items-center space-x-2">
+        <Link href="/" className="flex items-center space-x-2">
           <motion.div
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -71,7 +70,7 @@ export const Navbar = () => {
                 href={item.href}
                 className={cn(
                   "text-sm font-medium transition-colors hover:text-primary",
-                  pathname === item.href
+                  (item.href === "/" ? pathname === "/" : pathname.startsWith(item.href))
                     ? "text-primary"
                     : "text-muted-foreground"
                 )}

@@ -1,73 +1,86 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Card, CardContent } from "@/components/ui/card";
-import {
-  Code,
-  Layout,
-  Database,
-  GitBranch,
-  Smartphone,
-  Zap,
-  Server,
-} from "lucide-react";
+import { Code, Database, GitBranch, Smartphone, Zap, Server } from "lucide-react";
 import { HoverEffect } from "@/components/ui/card-hover-effect";
 
-export default function Skills() {
-  const skills = [
-    {
-      icon: <Code className="h-10 w-10 text-primary" />,
-      title: "Frontend Development",
-      description:
-        "Building responsive and interactive UIs with React, Next.js, TypeScript & Tailwind CSS",
-    },
-    {
-      icon: <Server className="h-10 w-10 text-primary" />,
-      title: "Api Development",
-      description:
-        "Building performant APIs with Next.js, Prisma/Drizzle, Trpc, and PostgreSQL.",
-    },
-    {
-      icon: <Database className="h-10 w-10 text-primary" />,
-      title: "Backend Integration",
-      description:
-        "Connecting frontend applications with APIs and backend services.",
-    },
-    {
-      icon: <GitBranch className="h-10 w-10 text-primary" />,
-      title: "Version Control",
-      description:
-        "Managing code with Git, GitHub, and implementing CI/CD workflows.",
-    },
-    {
-      icon: <Smartphone className="h-10 w-10 text-primary" />,
-      title: "Responsive Design",
-      description:
-        "Ensuring applications work flawlessly across all devices and screen sizes.",
-    },
-    {
-      icon: <Zap className="h-10 w-10 text-primary" />,
-      title: "Performance Optimization",
-      description:
-        "Optimizing web applications for speed, accessibility, and SEO.",
-    },
-  ];
+const skills = [
+  {
+    icon: <Code className="h-10 w-10 text-primary" />,
+    title: "Frontend Engineering",
+    description:
+      "React, Next.js, TypeScript, Tailwind CSS, Framer Motion — building fast, accessible UIs with clean component architecture.",
+  },
+  {
+    icon: <Server className="h-10 w-10 text-primary" />,
+    title: "Backend & APIs",
+    description:
+      "Node.js, Express.js, Next.js API routes, tRPC — designing RESTful and type-safe APIs that are easy to maintain and scale.",
+  },
+  {
+    icon: <Database className="h-10 w-10 text-primary" />,
+    title: "Databases & ORMs",
+    description:
+      "PostgreSQL, Neon DB, Supabase — with Prisma and Drizzle ORM for type-safe queries, migrations, and schema management.",
+  },
+  {
+    icon: <GitBranch className="h-10 w-10 text-primary" />,
+    title: "Auth & Security",
+    description:
+      "NextAuth, OAuth 2.0, Clerk — implementing secure authentication flows including social login, sessions, and role-based access.",
+  },
+  {
+    icon: <Smartphone className="h-10 w-10 text-primary" />,
+    title: "Responsive Design",
+    description:
+      "Mobile-first layouts that work flawlessly across all screen sizes, with attention to spacing, typography, and accessibility.",
+  },
+  {
+    icon: <Zap className="h-10 w-10 text-primary" />,
+    title: "Performance & DX",
+    description:
+      "Code splitting, caching, image optimization, CI/CD with GitHub Actions, and Vercel deployments for smooth workflows.",
+  },
+];
 
+const techStack = [
+  { name: "React", color: "text-cyan-400 bg-cyan-400/10" },
+  { name: "Next.js", color: "text-white bg-white/10" },
+  { name: "TypeScript", color: "text-blue-400 bg-blue-400/10" },
+  { name: "JavaScript", color: "text-yellow-400 bg-yellow-400/10" },
+  { name: "Node.js", color: "text-green-400 bg-green-400/10" },
+  { name: "Express.js", color: "text-gray-300 bg-gray-300/10" },
+  { name: "Tailwind CSS", color: "text-sky-400 bg-sky-400/10" },
+  { name: "Prisma", color: "text-emerald-400 bg-emerald-400/10" },
+  { name: "Drizzle ORM", color: "text-lime-400 bg-lime-400/10" },
+  { name: "PostgreSQL", color: "text-indigo-400 bg-indigo-400/10" },
+  { name: "Neon DB", color: "text-teal-400 bg-teal-400/10" },
+  { name: "Supabase", color: "text-green-300 bg-green-300/10" },
+  { name: "NextAuth", color: "text-purple-400 bg-purple-400/10" },
+  { name: "OAuth 2.0", color: "text-orange-400 bg-orange-400/10" },
+  { name: "tRPC", color: "text-blue-300 bg-blue-300/10" },
+  { name: "React Query", color: "text-red-400 bg-red-400/10" },
+  { name: "Redux", color: "text-violet-400 bg-violet-400/10" },
+  { name: "Framer Motion", color: "text-pink-400 bg-pink-400/10" },
+  { name: "Clerk", color: "text-amber-400 bg-amber-400/10" },
+  { name: "HTML/CSS", color: "text-rose-400 bg-rose-400/10" },
+];
+
+export default function Skills() {
   return (
-    <section id="skills" className="py-20 relative z-10">
-      <div className="container">
+    <section id="skills" className="py-12 md:py-20 relative z-10">
+      <div className="container max-w-5xl">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="text-center mb-12"
+          className="mb-8 md:mb-12"
         >
-          <h2 className="text-3xl font-bold mb-4">My Skills</h2>
-          <div className="w-20 h-1 bg-primary mx-auto mb-6"></div>
-          <p className="text-muted-foreground max-w-2xl mx-auto">
-            Here are some of the technologies and skills I've been working with
-          </p>
+          <span className="text-sm font-medium text-primary tracking-widest uppercase">
+            Skills
+          </span>
+          <h2 className="text-3xl md:text-4xl font-bold mt-2">What I work with</h2>
         </motion.div>
 
         <HoverEffect
@@ -82,37 +95,26 @@ export default function Skills() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 0.3 }}
-          className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-4"
+          transition={{ duration: 0.5, delay: 0.2 }}
+          className="mt-10"
         >
-          {[
-            "React",
-            "Next.js",
-            "TypeScript",
-            "JavaScript",
-            "Tailwind CSS",
-            "Clerk",
-            "Prisma",
-            "HTML/CSS",
-            "Redux",
-            "React Query",
-            "Supabase",
-            "Framer Motion",
-          ].map((tech, index) => (
-            <Card key={tech} className="border border-primary/20">
-              <CardContent className="flex items-center justify-center p-6">
-                <motion.div
-                  initial={{ scale: 0.8, opacity: 0 }}
-                  whileInView={{ scale: 1, opacity: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: index * 0.1 }}
-                  className="text-center"
-                >
-                  <span className="block text-lg font-medium">{tech}</span>
-                </motion.div>
-              </CardContent>
-            </Card>
-          ))}
+          <p className="text-sm text-muted-foreground uppercase tracking-widest mb-5">
+            Tech Stack
+          </p>
+          <div className="flex flex-wrap gap-2.5">
+            {techStack.map((tech, index) => (
+              <motion.span
+                key={tech.name}
+                initial={{ opacity: 0, scale: 0.85 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.03 }}
+                className={`px-3.5 py-1.5 rounded-full text-sm font-medium ${tech.color}`}
+              >
+                {tech.name}
+              </motion.span>
+            ))}
+          </div>
         </motion.div>
       </div>
     </section>

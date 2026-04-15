@@ -22,7 +22,7 @@ export const HoverEffect = ({
   return (
     <div
       className={cn(
-        "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 py-10",
+        "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 py-4 md:py-10",
         className
       )}
     >
@@ -51,7 +51,7 @@ export const HoverEffect = ({
             )}
           </AnimatePresence>
           <Card>
-            <div className="flex flex-col gap-4 p-6">
+            <div className="h-full flex flex-col gap-4 p-6">
               {item.icon}
               <CardTitle>{item.title}</CardTitle>
               <CardDescription>{item.description}</CardDescription>
@@ -73,7 +73,7 @@ export const Card = ({
   return (
     <div
       className={cn(
-        "rounded-lg border border-primary/10 bg-background shadow-sm group-hover:border-primary/30 transition-colors",
+        "h-full rounded-lg border border-primary/10 bg-background shadow-sm group-hover:border-primary/30 transition-colors",
         className
       )}
     >
