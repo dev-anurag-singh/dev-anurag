@@ -39,7 +39,14 @@ export const experiences: Experience[] = [
       "Developed Trader Tracker enabling users to monitor other traders' live positions in real-time",
       "Shipped UI for Alerts, Telegram Connect, and API Keys management features",
     ],
-    tech: ["Next.js", "React", "TypeScript", "TradingView", "Reown", "Tailwind CSS"],
+    tech: [
+      "Next.js",
+      "React",
+      "TypeScript",
+      "TradingView",
+      "Reown",
+      "Tailwind CSS",
+    ],
     color: "from-cyan-500 to-purple-500",
     dot: "bg-cyan-400",
   },
@@ -68,7 +75,7 @@ export const featuredProject: Project = {
   company: "Block Liquidity",
   description:
     "A full-featured crypto trading terminal built from scratch — modelled after Hyperliquid. Includes a real-time price chart, order system, and custom technical indicators built on TradingView Advanced Charts.",
-  image: "/trading.jpeg",
+  image: "/terminal.png",
   tags: ["Next.js", "React", "TypeScript", "TradingView", "Tailwind CSS"],
   liveUrl: "https://blockliquidity.xyz",
   githubUrl: null,
@@ -85,17 +92,28 @@ export const featuredProject: Project = {
 export const personalProjects: Project[] = [
   {
     id: 1,
-    title: "Kanban Board",
+    title: "Flowboard",
     description:
       "Kanban-style task manager with real-time updates, authentication, and a responsive UI for organizing tasks across boards and columns.",
-    image: "/kanban-preview.jpg",
+    image: "/flowboard.png",
     tags: ["Next.js", "React", "TypeScript", "Supabase", "React Query"],
     demoUrl: "https://kanban.anuragkumar.dev",
     githubUrl: "https://github.com/dev-anurag-singh/kanban-task-manager",
-    slug: "kanban-board",
+    slug: "flowboard",
   },
   {
     id: 2,
+    title: "Finify",
+    description:
+      "Personal finance tracker to monitor income, expenses, and financial health with an intuitive dashboard and spending insights.",
+    image: "/finify-preview.png",
+    tags: ["Next.js", "TypeScript", "Drizzle", "PostgreSQL", "Recharts"],
+    demoUrl: "https://finify.anuragkumar.dev",
+    githubUrl: "https://github.com/dev-anurag-singh/finify",
+    slug: "finify",
+  },
+  {
+    id: 3,
     title: "Devlinks",
     description:
       "Custom link-sharing app — create a profile and share all your social links via a single digital card. Built with Supabase auth and real-time database.",
@@ -106,25 +124,14 @@ export const personalProjects: Project[] = [
     slug: "devlinks",
   },
   {
-    id: 3,
+    id: 4,
     title: "Invoice Manager",
     description:
       "Invoice management tool to create, update, and filter invoices by status. Includes light/dark mode and a clean, accessible interface.",
-    image: "/invoice-preview.jpg",
+    image: "/invoice-preview.png",
     tags: ["React", "Next.js", "TypeScript", "Zod", "Radix UI"],
     demoUrl: "https://invoices.anuragkumar.dev",
     githubUrl: "https://github.com/dev-anurag-singh/invoice-manager",
     slug: "invoice-manager",
-  },
-  {
-    id: 4,
-    title: "Finance Dashboard",
-    description:
-      "Personal finance tracker to monitor income, expenses, and financial health with an intuitive dashboard and spending insights.",
-    image: "/finify-preview.png",
-    tags: ["Next.js", "TypeScript", "Drizzle", "PostgreSQL", "Recharts"],
-    demoUrl: "https://finify.anuragkumar.dev",
-    githubUrl: "https://github.com/dev-anurag-singh/finify",
-    slug: "finance-dashboard",
   },
 ];

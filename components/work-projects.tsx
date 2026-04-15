@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { ExternalLink, Github, ArrowRight } from "lucide-react";
+import { ExternalLink, ArrowRight, Github } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { featuredProject, personalProjects } from "@/lib/data";
@@ -38,16 +38,16 @@ export default function WorkProjects() {
           <p className="text-xs font-medium text-muted-foreground uppercase tracking-widest mb-4">
             Professional
           </p>
-          <div className="rounded-2xl border border-border bg-card overflow-hidden">
+          <div className="rounded-2xl border border-white/[0.08] bg-white/[0.04] backdrop-blur-sm overflow-hidden">
             {/* Full-width image on top */}
-            <div className="relative aspect-video w-full bg-muted overflow-hidden">
+            <div className="w-full bg-muted overflow-hidden">
               <Image
                 src={featuredProject.image}
                 alt={featuredProject.title}
-                fill
-                className="object-cover"
+                width={1920}
+                height={1280}
+                className="w-full h-auto"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
             </div>
 
             {/* Content below */}
@@ -119,14 +119,15 @@ export default function WorkProjects() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: index * 0.08 }}
-                className="group rounded-2xl border border-border bg-card overflow-hidden flex flex-col"
+                className="group rounded-2xl border border-white/[0.08] bg-white/[0.04] backdrop-blur-sm overflow-hidden flex flex-col hover:border-white/[0.15] transition-colors duration-200"
               >
-                <div className="relative aspect-video overflow-hidden bg-muted">
+                <div className="overflow-hidden bg-muted">
                   <Image
                     src={project.image}
                     alt={project.title}
-                    fill
-                    className="object-cover transition-transform duration-500 group-hover:scale-105"
+                    width={1920}
+                    height={1280}
+                    className="w-full h-auto transition-transform duration-500 group-hover:scale-105"
                   />
                 </div>
 

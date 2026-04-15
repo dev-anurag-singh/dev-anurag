@@ -71,15 +71,15 @@ export default function About() {
 
             {/* Info chips */}
             <div className="flex flex-wrap gap-3">
-              <div className="flex items-center gap-2 bg-muted rounded-full px-4 py-2 text-sm">
+              <div className="flex items-center gap-2 bg-white/[0.06] backdrop-blur-sm rounded-full px-4 py-2 text-sm border border-white/[0.08]">
                 <MapPin className="h-3.5 w-3.5 text-primary" />
                 Delhi, India
               </div>
-              <div className="flex items-center gap-2 bg-muted rounded-full px-4 py-2 text-sm">
+              <div className="flex items-center gap-2 bg-white/[0.06] backdrop-blur-sm rounded-full px-4 py-2 text-sm border border-white/[0.08]">
                 <Clock className="h-3.5 w-3.5 text-primary" />
                 2+ yrs building
               </div>
-              <div className="flex items-center gap-2 bg-emerald-500/10 text-emerald-400 rounded-full px-4 py-2 text-sm">
+              <div className="flex items-center gap-2 bg-emerald-500/10 text-emerald-400 rounded-full px-4 py-2 text-sm border border-emerald-500/20 backdrop-blur-sm">
                 <span className="h-2 w-2 rounded-full bg-emerald-400 animate-pulse" />
                 Available for work
               </div>

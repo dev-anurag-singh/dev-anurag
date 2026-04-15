@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 export default function Hero() {
   return (
@@ -55,14 +56,14 @@ export default function Hero() {
             hover:bg-[position:100%_50%]
             hover:scale-105 hover:-translate-y-1 hover:shadow-md animate-gradient hover:shadow-[#7A00C055]"
           >
-            <a href="/work">View My Work</a>
+            <Link href="/work">View My Work</Link>
           </Button>
           <Button
             asChild
             variant="outline"
             className="font-semibold w-48 h-14 rounded-full text-lg transition-all duration-200 hover:scale-110 hover:shadow-lg hover:-translate-y-1"
           >
-            <a href="/contact">Hire Me</a>
+            <Link href="/contact">Hire Me</Link>
           </Button>
         </motion.div>
       </div>

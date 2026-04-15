@@ -41,7 +41,7 @@ export default function Experience() {
                   className={`absolute left-0 top-3 w-2 h-2 rounded-full -translate-x-[3px] hidden md:block ${exp.dot}`}
                 />
 
-                <div className="rounded-2xl border border-border bg-card p-5 md:p-8 space-y-4 md:space-y-5">
+                <div className="rounded-2xl border border-white/[0.08] bg-white/[0.04] backdrop-blur-sm p-5 md:p-8 space-y-4 md:space-y-5">
                   {/* Header */}
                   <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2">
                     <div>
@@ -58,7 +58,7 @@ export default function Experience() {
                         {exp.role}
                       </p>
                     </div>
-                    <span className="text-xs font-medium text-muted-foreground bg-muted px-3 py-1.5 rounded-full whitespace-nowrap self-start">
+                    <span className="text-xs font-medium text-muted-foreground bg-white/[0.06] px-3 py-1.5 rounded-full whitespace-nowrap self-start">
                       {exp.duration}
                     </span>
                   </div>

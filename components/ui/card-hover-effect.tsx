@@ -73,7 +73,7 @@ export const Card = ({
   return (
     <div
       className={cn(
-        "h-full rounded-lg border border-primary/10 bg-background shadow-sm group-hover:border-primary/30 transition-colors",
+        "h-full rounded-lg border border-white/[0.08] bg-white/[0.03] backdrop-blur-sm shadow-sm group-hover:border-primary/40 group-hover:bg-white/[0.06] transition-all duration-200",
         className
       )}
     >
