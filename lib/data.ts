@@ -97,8 +97,8 @@ export const personalProjects: Project[] = [
       "Kanban-style task manager with real-time updates, authentication, and a responsive UI for organizing tasks across boards and columns.",
     image: "/flowboard.png",
     tags: ["Next.js", "React", "TypeScript", "Supabase", "React Query"],
-    demoUrl: "https://kanban.anuragkumar.dev",
-    githubUrl: "https://github.com/dev-anurag-singh/kanban-task-manager",
+    demoUrl: "https://flowboard.anuragkumar.dev",
+    githubUrl: "https://github.com/dev-anurag-singh/flowboard",
     slug: "flowboard",
   },
   {
