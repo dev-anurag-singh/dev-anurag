@@ -66,6 +66,9 @@ export function ContactForm() {
     }
   };
 
+  const inputClass =
+    "bg-white/[0.06] border-white/[0.10] focus:border-primary/50 focus-visible:ring-0 focus-visible:ring-offset-0 placeholder:text-muted-foreground/50 transition-colors";
+
   return (
     <Form {...form}>
       <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
@@ -75,9 +78,9 @@ export function ContactForm() {
             name="name"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>Name</FormLabel>
+                <FormLabel className="text-muted-foreground text-xs uppercase tracking-widest">Name</FormLabel>
                 <FormControl>
-                  <Input placeholder="Your Name" {...field} />
+                  <Input placeholder="Your name" className={inputClass} {...field} />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -88,9 +91,9 @@ export function ContactForm() {
             name="email"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>Email</FormLabel>
+                <FormLabel className="text-muted-foreground text-xs uppercase tracking-widest">Email</FormLabel>
                 <FormControl>
-                  <Input placeholder="Your Email" {...field} />
+                  <Input placeholder="your@email.com" className={inputClass} {...field} />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -102,9 +105,9 @@ export function ContactForm() {
           name="subject"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Subject</FormLabel>
+              <FormLabel className="text-muted-foreground text-xs uppercase tracking-widest">Subject</FormLabel>
               <FormControl>
-                <Input placeholder="Subject" {...field} />
+                <Input placeholder="What's this about?" className={inputClass} {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -115,16 +118,30 @@ export function ContactForm() {
           name="message"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Message</FormLabel>
+              <FormLabel className="text-muted-foreground text-xs uppercase tracking-widest">Message</FormLabel>
               <FormControl>
-                <Textarea placeholder="Your Message" {...field} />
+                <Textarea
+                  placeholder="Tell me about your project..."
+                  className={`${inputClass} min-h-32 resize-none`}
+                  {...field}
+                />
               </FormControl>
               <FormMessage />
             </FormItem>
           )}
         />
-        <Button className="w-full" disabled={isSubmitting} type="submit">
-          Submit
+        <Button
+          className="w-full font-semibold
+            text-white
+            bg-[linear-gradient(to_right,#00E6E6,#7A00C0)]
+            bg-[length:200%_200%] bg-[position:0%_50%]
+            transition-all duration-200 ease-in-out
+            hover:bg-[position:100%_50%]
+            hover:shadow-md animate-gradient hover:shadow-[#7A00C055]"
+          disabled={isSubmitting}
+          type="submit"
+        >
+          {isSubmitting ? "Sending..." : "Send Message"}
         </Button>
       </form>
     </Form>

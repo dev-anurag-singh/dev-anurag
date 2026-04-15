@@ -1,131 +1,98 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Card, CardContent } from "@/components/ui/card";
-import {
-  Mail,
-  Phone,
-  MapPin,
-  Send,
-  Github,
-  Linkedin,
-  Twitter,
-} from "lucide-react";
-import { LampContainer } from "@/components/ui/lamp";
+import { Mail, MapPin } from "lucide-react";
+import Link from "next/link";
+import { Github, Linkedin, Twitter } from "lucide-react";
 import { ContactForm } from "./contact-form";
+
+const socials = [
+  { icon: Github, label: "GitHub", href: "https://github.com/dev-anurag-singh" },
+  { icon: Linkedin, label: "LinkedIn", href: "https://www.linkedin.com/in/iamanuragkr" },
+  { icon: Twitter, label: "Twitter", href: "https://x.com/iam_anuragkr" },
+];
 
 export default function Contact() {
   return (
-    <section id="contact" className="py-20 relative z-10">
-      <LampContainer>
-        <div className="container">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-            className="text-center mb-12"
-          >
-            <h2 className="text-3xl font-bold mb-4">Get In Touch</h2>
-            <div className="w-20 h-1 bg-primary mx-auto mb-6"></div>
-            <p className="text-muted-foreground max-w-2xl mx-auto">
-              Have a project in mind or want to collaborate? Feel free to reach
-              out!
-            </p>
-          </motion.div>
-
-          <div className="flex justify-center gap-10">
-            {/* <motion.div
-              initial={{ opacity: 0, x: -50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5 }}
-            >
-              <Card>
-                <CardContent className="p-6">
-                  <h3 className="text-xl font-bold mb-6">
-                    Contact Information
-                  </h3>
-
-                  <div className="space-y-6">
-                    <div className="flex items-start">
-                      <div className="mr-4 bg-primary/10 p-3 rounded-full">
-                        <Mail className="h-5 w-5 text-primary" />
-                      </div>
-                      <div>
-                        <h4 className="font-medium">Email</h4>
-                        <p className="text-muted-foreground">
-                          contact@anuragkumar.dev
-                        </p>
-                      </div>
-                    </div>
-
-                    <div className="flex items-start">
-                      <div className="mr-4 bg-primary/10 p-3 rounded-full">
-                        <Phone className="h-5 w-5 text-primary" />
-                      </div>
-                      <div>
-                        <h4 className="font-medium">Phone</h4>
-                        <p className="text-muted-foreground">+91 7903679825</p>
-                      </div>
-                    </div>
-
-                    <div className="flex items-start">
-                      <div className="mr-4 bg-primary/10 p-3 rounded-full">
-                        <MapPin className="h-5 w-5 text-primary" />
-                      </div>
-                      <div>
-                        <h4 className="font-medium">Location</h4>
-                        <p className="text-muted-foreground">Delhi, India</p>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="mt-8">
-                    <h3 className="text-xl font-bold mb-4">Follow Me</h3>
-                    <div className="flex space-x-4">
-                      <a
-                        href="https://github.com/dev-anurag-singh"
-                        className="bg-primary/10 p-3 rounded-full hover:bg-primary/20 transition-colors"
-                      >
-                        <Github className="h-5 w-5 text-primary" />
-                      </a>
-                      <a
-                        href="https://www.linkedin.com/in/iamanuragkr"
-                        className="bg-primary/10 p-3 rounded-full hover:bg-primary/20 transition-colors"
-                      >
-                        <Linkedin className="h-5 w-5 text-primary" />
-                      </a>
-                      <a
-                        href="https://x.com/iam_anuragkr"
-                        className="bg-primary/10 p-3 rounded-full hover:bg-primary/20 transition-colors"
-                      >
-                        <Twitter className="h-5 w-5 text-primary" />
-                      </a>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-            </motion.div> */}
-
-            <motion.div
-              initial={{ opacity: 0, x: 50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.2 }}
-              className="w-full max-w-2xl"
-            >
-              <Card>
-                <CardContent className="p-6 ">
-                  <h3 className="text-xl font-bold mb-6">Send Me a Message</h3>
-
-                  <ContactForm />
-                </CardContent>
-              </Card>
-            </motion.div>
+    <section className="py-14 md:py-24 relative z-10">
+      <div className="container max-w-2xl">
+        {/* Header */}
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          className="mb-10 md:mb-12"
+        >
+          <span className="text-sm font-medium text-primary tracking-widest uppercase">
+            Contact
+          </span>
+          <h2 className="text-3xl md:text-4xl font-bold mt-2 mb-4">
+            Let&apos;s work together
+          </h2>
+          <p className="text-muted-foreground leading-relaxed">
+            Available for freelance and full-time roles. Have a project in mind
+            or just want to say hi? Send me a message and I&apos;ll get back to
+            you.
+          </p>
+          <div className="flex items-center gap-2 mt-4">
+            <span className="h-2 w-2 rounded-full bg-emerald-400 animate-pulse" />
+            <span className="text-sm text-emerald-400">Available for work</span>
           </div>
-        </div>
-      </LampContainer>
+        </motion.div>
+
+        {/* Form */}
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.1 }}
+        >
+          <div className="rounded-2xl border border-white/[0.08] bg-white/[0.04] backdrop-blur-sm p-6 md:p-8">
+            <ContactForm />
+          </div>
+        </motion.div>
+
+        {/* Contact info + socials */}
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+          className="mt-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6"
+        >
+          <div className="flex flex-wrap gap-4">
+            <a
+              href="mailto:contact@anuragkumar.dev"
+              className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors"
+            >
+              <Mail className="h-3.5 w-3.5" />
+              contact@anuragkumar.dev
+            </a>
+            <span className="flex items-center gap-2 text-sm text-muted-foreground">
+              <MapPin className="h-3.5 w-3.5" />
+              Delhi, India
+            </span>
+          </div>
+
+          <div className="flex items-center gap-2">
+            {socials.map(social => {
+              const Icon = social.icon;
+              return (
+                <Link
+                  key={social.label}
+                  href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="p-2 rounded-lg bg-white/[0.06] border border-white/[0.08] text-muted-foreground hover:text-primary hover:border-primary/40 transition-all duration-200"
+                >
+                  <Icon className="h-4 w-4" />
+                </Link>
+              );
+            })}
+          </div>
+        </motion.div>
+      </div>
     </section>
   );
 }

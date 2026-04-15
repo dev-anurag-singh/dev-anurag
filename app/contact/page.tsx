@@ -10,8 +10,10 @@ export const metadata: Metadata = {
 
 export default function ContactPage() {
   return (
-    <main className="min-h-screen pt-16">
-      <Contact />
+    <main className="min-h-screen pt-16 flex flex-col">
+      <div className="flex-1">
+        <Contact />
+      </div>
       <Footer />
     </main>
   );
