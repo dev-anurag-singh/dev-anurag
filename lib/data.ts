@@ -117,7 +117,7 @@ export const personalProjects: Project[] = [
     title: "Devlinks",
     description:
       "Custom link-sharing app — create a profile and share all your social links via a single digital card. Built with Supabase auth and real-time database.",
-    image: "/devlink-preview.jpg",
+    image: "/devlink-preview.png",
     tags: ["React", "TypeScript", "Supabase", "Tailwind CSS"],
     demoUrl: "https://devlinks.anuragkumar.dev",
     githubUrl: "https://github.com/dev-anurag-singh/devlinks",
