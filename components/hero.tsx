@@ -16,15 +16,11 @@ const techStack = [
 
 export default function Hero() {
   return (
-    <section
-      id="home"
-      className="relative h-dvh flex flex-col items-center justify-center overflow-hidden"
-    >
+    <section id="home" className="relative h-dvh flex flex-col overflow-hidden">
       {/* Subtle dot grid */}
       <div className="absolute inset-0 bg-[radial-gradient(rgba(255,255,255,0.04)_1px,transparent_1px)] bg-[size:32px_32px] [mask-image:radial-gradient(ellipse_70%_70%_at_50%_50%,black_30%,transparent_100%)]" />
 
-      <div className="container flex flex-col py-16 md:py-28 px-4 items-center justify-center text-center z-10 max-w-5xl">
-
+      <div className="flex-1 flex flex-col items-center justify-center px-4 pt-16 z-10 w-full max-w-5xl mx-auto text-center">
         {/* Available badge */}
         <motion.div
           initial={{ opacity: 0, y: 10 }}
@@ -112,7 +108,7 @@ export default function Hero() {
             Tech I work with
           </p>
           <div className="flex flex-wrap justify-center gap-2">
-            {techStack.map((tech) => (
+            {techStack.map(tech => (
               <span
                 key={tech}
                 className="px-3 py-1 text-xs md:text-sm rounded-full bg-white/[0.04] border border-white/[0.08] text-muted-foreground/70 backdrop-blur-sm"
@@ -123,7 +119,6 @@ export default function Hero() {
           </div>
         </motion.div>
       </div>
-
     </section>
   );
 }
