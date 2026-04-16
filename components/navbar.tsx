@@ -47,9 +47,11 @@ export const Navbar = () => {
             >
               {isActive(item.href) && (
                 <motion.div
-                  layoutId="active-pill"
+                  key="active-pill"
+                  initial={{ opacity: 0, scale: 0.95 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.15 }}
                   className="absolute inset-0 rounded-full bg-white/[0.10] border border-white/[0.12]"
-                  transition={{ type: "spring", stiffness: 400, damping: 35 }}
                 />
               )}
               <span className="relative z-10">{item.name}</span>
